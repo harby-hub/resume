@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
-    "bild": "quasar build; cp -r dist/spa/* docs; git add -A ; git commit -m \"$(date +`%T-%Y-%m-%d`)\"; ",
+    "bild": "quasar build; cp -r dist/spa/* docs; git add -A ; git commit -m \"update\"; git push origin main ",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {

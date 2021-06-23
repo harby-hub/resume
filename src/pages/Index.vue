@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-  mahmoud
+  git init
     <img
       alt="Quasar logo"
       src="~assets/quasar-logo-vertical.svg"
