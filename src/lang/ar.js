@@ -16,11 +16,11 @@ export default {
 	},
 	Index : {
 		experience               : 'خبرة'                                                                                                                                                                ,
-		curren                   : 'كورين'                                                                                                                                                               ,
+		curren                   : 'اللي الان'                                                                                                                                                               ,
 		analyzeProjects          : 'تحليل المشاريع وتصميم قواعد البيانات ، وبناء الواجهة الخلفية وواجهة برمجة تطبيقات مريحة وواجهة رسم بياني لتطبيقات الأجهزة المحمولة ، وإنشاء عرض لواجهة مستخدم الويب' ,
 		WebDeveloperFreelancer   : 'مطور ويب مستقل وتعلم ذاتي'                                                                                                                                           ,
 		PROJECTS                 : 'المشاريع'                                                                                                                                                            ,
-		fullStackWebDeveloper    : 'مطور ويب مكدس كامل'                                                                                                                                                  ,
+		fullStackWebDeveloper    : 'مطور ويب كامل'                                                                                                                                                  ,
 		backEndWebDeveloper      : 'مطور الويب الخلفي'                                                                                                                                                   ,
 		frontEndWebDeveloper     : 'مطور الويب الأمامي'                                                                                                                                                  ,
 		UsedTechnologies         : 'التقنيات المستخدمة'                                                                                                                                                  ,
