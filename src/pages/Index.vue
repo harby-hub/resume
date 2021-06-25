@@ -228,26 +228,9 @@
 <script>
 
 import { defineComponent } from 'vue'    ;
-import { createMetaMixin } from 'quasar' ;
 
 export default defineComponent({
 	name       : 'PageIndex',
-	mixins: [
-		createMetaMixin({
-			// sets document title
-			title: 'Mahmoud Sami',
-			// optional; sets final title as "Index Page - My Website", useful for multiple level meta
-			titleTemplate: title => `${title} - Resume`,
-			// meta tags
-			meta: {
-				keywords    : { name         : 'keywords'     , content: 'arch fedora centos docker jenkins php python ruby go javascript dart kotlin laravel gin django rails adonis mysql sqlite neo4j firebase mongodb postgressql git composer npm yarn pip pacman dnf yum gem ffmpeg' },
-				equiv       : { 'http-equiv' : 'Content-Type' , content: 'text/html; charset=UTF-8'                                      },
-				ogImage     : { property     : 'og:image'     , content: `http://graph.facebook.com/3366546543464315/picture?type=large` },
-				description : { name         : 'description'  , content: 'Mahmoud Sami Resume'                                           },
-				ogTitle     : { property     : 'og:title'     , content: `Mahmoud Sami Resume`                                           }
-			},
-		})
-	],
 	methods    : {
 		myTweak (offset) {
 			this.minHeight = offset ? `calc(100vh - ${offset}px)` : '100vh' ;
