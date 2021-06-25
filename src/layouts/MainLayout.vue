@@ -30,7 +30,7 @@
                 <div class="w-100 row justify-center">
                     <q-avatar class = "avatar-img" >
                         <q-img class="absolute-top" />
-                        <q-img src="~/assets/icon.png" />
+                        <q-img src="http://graph.facebook.com/3366546543464315/picture?type=large" /> -->
                     </q-avatar>
                 </div>
                 <q-list padding>
