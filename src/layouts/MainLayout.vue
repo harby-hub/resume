@@ -1,119 +1,151 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
+    <q-layout view="lHh Lpr lFf" class="text-capitalize" >
+        <q-header elevated>
+            <q-toolbar>
+                <q-btn
+                    flat
+                    dense
+                    round
+                    icon="fas fa-grip-horizontal"
+                    aria-label="Menu"
+                    @click="toggleLeftDrawer"
+                />
+                <q-toolbar-title v-text="lang.title" />
+                <selectLanguage/>
+                <q-toggle
+                    v-model        = 'DakeMode'
+                    size           = "lg"
+                    color          = "green"
+                    checked-icon = "fas fa-moon"
+                    unchecked-icon   = "fas fa-sun"
+                />
+            </q-toolbar>
+        </q-header>
+        <q-drawer
+            v-model     = "leftDrawerOpen"
+            style       = "border-right: 1px solid"
+            :persistent = "$q.screen.lt.sm ? false : true "
         >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+            <q-scroll-area style="height: 100%; border-right: 1px solid #ddd">
+                <div class="w-100 row justify-center">
+                    <q-avatar class = "avatar-img" >
+                        <q-img class="absolute-top" />
+                        <q-img src="http://graph.facebook.com/3366546543464315/picture?type=large" />
+                    </q-avatar>
+                </div>
+                <q-list padding>
+                    <q-expansion-item :label="lang.contactMe"
+                        expand-separator
+                        default-opened
+                        icon="fas fa-user"
+                        expand-icon="fas fa-angle-down"
+                    >
+                        <q-item clickable v-ripple @click="copy( '01145803442' , 'fas fa-phone' , lang.phoneNumber )">
+                            <q-item-section avatar> <q-icon name="fas fa-phone" /> </q-item-section>
+                            <q-item-section> <b>+201145803442</b> </q-item-section>
+                            <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
+                            <q-tooltip v-text="lang.clickCopy" />
+                        </q-item>
+                        <q-item clickable v-ripple @click="copy( 'mahmuod.sami.99@gmail.com' , 'far fa-envelope' , lang.emailAddress )">
+                            <q-item-section avatar> <q-icon name="far fa-envelope" /> </q-item-section>
+                            <q-item-section> <b>mahmuod.sami.99</b> </q-item-section>
+                            <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
+                            <q-tooltip v-text="lang.clickCopy" />
+                        </q-item>
+                    </q-expansion-item>
+                    <q-expansion-item :label="lang.connect"
+                        expand-separator
+                        default-opened
+                        icon="fas fa-users"
+                        expand-icon="fas fa-angle-down"
+                    >
+                        <q-item clickable v-ripple @click="copy( 'linkedin.com/in/harbii' , 'fab fa-linkedin' , lang.linkedinLink )">
+                            <q-item-section avatar> <q-icon name="fab fa-linkedin" /> </q-item-section>
+                            <q-item-section> <b>linkedin.com/in/harbii  </b> </q-item-section>
+                            <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
+                            <q-tooltip v-text="lang.clickCopy" />
+                        </q-item>
+                        <q-item clickable v-ripple @click="copy( 'github.com/harbii' , 'fab fa-github-square' , lang.githubLink )">
+                            <q-item-section avatar> <q-icon name="fab fa-github-square" /> </q-item-section>
+                            <q-item-section> <b>github.com/harbii </b> </q-item-section>
+                            <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
+                            <q-tooltip v-text="lang.clickCopy" />
+                        </q-item>
+                        <q-item clickable v-ripple @click="copy( 'https://www.youtube.com/channel/UCK1JG22BT9BSYSEnwJdmpYw' , 'fab fa-youtube-square' , lang.youtubeLink )">
+                            <q-item-section avatar> <q-icon name="fab fa-youtube-square" /> </q-item-section>
+                            <q-item-section> <b>Mahmuod harby </b> </q-item-section>
+                            <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
+                            <q-tooltip v-text="lang.clickCopy" />
+                        </q-item>
+                    </q-expansion-item>
+                </q-list>
+            </q-scroll-area>
+        </q-drawer>
+        <q-page-container> <router-view /> </q-page-container>
+    </q-layout>
 </template>
 
+<style lang = "scss" scoped >
+    $clip-path : polygon( 30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30% ) !default;
+	.avatar-img{
+        margin       : 20px 0 ;
+		font-size    : 200px  ;
+		border-radius: 0      ;
+		border       : 0      ;
+		[role="img"]:first-of-type{
+			background : var( --q-primary ) ;
+			height     : 100%;
+			clip-path  : $clip-path;
+		}
+		[role="img"]:last-of-type{
+			width     : 95%        ;
+			height    : 95%        ;
+			clip-path : $clip-path ;
+		}
+	}
+</style>
+
 <script>
-import EssentialLink from 'components/EssentialLink.vue';
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-];
-
-import { defineComponent, ref } from 'vue';
+import   EssentialLink                       from 'components/EssentialLink.vue' ;
+import   selectLanguage                      from 'components/selectLanguage'    ;
+import { Notify                            } from 'quasar'                       ;
+import { defineComponent , ref , onMounted } from 'vue'                          ;
 
 export default defineComponent({
-  name: 'MainLayout',
-
-  components: {
-    EssentialLink,
-  },
-
-  setup() {
-    const leftDrawerOpen = ref(false);
-
-    return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
-    };
-  },
+    name: 'MainLayout',
+    components: {
+        EssentialLink,
+        selectLanguage
+    } ,
+    watch : {
+        DakeMode ( val ) {
+            this.$q.dark.set( val );
+            return this.$q.dark.isActive ;
+        }
+    },
+    computed:{
+        lang( ){ return this.$q.lang.MainLayout }
+    },
+    data ( ) { return {
+        leftDrawerOpen : true  ,
+        DakeMode       : false ,
+    } },
+    created( ){
+        this.DakeMode = true ;
+    },
+    methods:{
+        toggleLeftDrawer( ) {
+            this.leftDrawerOpen = !this.leftDrawerOpen ;
+        },
+        copy( string , icone , type ){
+            navigator.clipboard.writeText( string );
+            Notify.create({
+                html    : true   ,
+                icon    : icone  ,
+                message : `${type} ${this.lang.copped}. <i class='far fa-clipboard'/>`,
+            })
+        }
+    },
 });
 </script>

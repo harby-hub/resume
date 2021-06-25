@@ -23,6 +23,7 @@ module.exports = configure((ctx) => ({
   // --> boot files are part of "main.js"
   // https://v2.quasar.dev/quasar-cli/boot-files
   boot: [
+    'quasar-lang-pack'
   ],
 
   // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -34,14 +35,14 @@ module.exports = configure((ctx) => ({
   extras: [
     // 'ionicons-v4',
     // 'mdi-v5',
-    // 'fontawesome-v5',
+    'fontawesome-v5',
     // 'eva-icons',
     // 'themify',
     // 'line-awesome',
     // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
-    'roboto-font', // optional, you are not bound to it
-    'material-icons', // optional, you are not bound to it
+    // 'roboto-font', // optional, you are not bound to it
+    // 'material-icons', // optional, you are not bound to it
   ],
 
   // Full list of options: https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
@@ -55,7 +56,7 @@ module.exports = configure((ctx) => ({
     // Applies only if "transpile" is set to true.
     // transpileDependencies: [],
 
-    // rtl: true, // https://v2.quasar.dev/options/rtl-support
+    rtl: true, // https://v2.quasar.dev/options/rtl-support
     // preloadChunks: true,
     // showProgress: false,
     // gzip: true,
@@ -66,10 +67,10 @@ module.exports = configure((ctx) => ({
 
     // https://v2.quasar.dev/quasar-cli/handling-webpack
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-    chainWebpack(chain) {
+    /* chainWebpack(chain) {
       chain.plugin('eslint-webpack-plugin')
         .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }]);
-    },
+    }, */
   },
 
   // Full list of options: https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
@@ -94,7 +95,9 @@ module.exports = configure((ctx) => ({
     // directives: [],
 
     // Quasar plugins
-    plugins: [],
+    plugins: [
+      'Notify'
+    ],
   },
 
   // animations: 'all', // --- includes all animations

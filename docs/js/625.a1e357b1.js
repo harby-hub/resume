@@ -1,0 +1,1 @@
+(self["webpackChunkresume"]=self["webpackChunkresume"]||[]).push([[625],{8625:e=>{"use strict";e.exports=JSON.parse('[{"isoName":"ar","nativeName":"العربية"},{"isoName":"en","nativeName":"English"},{"isoName":"de","nativeName":"Deutsch"},{"isoName":"fr","nativeName":"Français"},{"isoName":"es","nativeName":"Español"},{"isoName":"fa","nativeName":"فارسی"}]')}}]);

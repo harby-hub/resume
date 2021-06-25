@@ -1,0 +1,8 @@
+[
+    { "isoName" : "ar" , "nativeName" : "العربية"  } ,
+    { "isoName" : "en" , "nativeName" : "English"  } ,
+    { "isoName" : "de" , "nativeName" : "Deutsch"  } ,
+    { "isoName" : "fr" , "nativeName" : "Français" } ,
+    { "isoName" : "es" , "nativeName" : "Español"  } ,
+    { "isoName" : "fa" , "nativeName" : "فارسی"    }
+]
