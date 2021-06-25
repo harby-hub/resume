@@ -159,16 +159,16 @@
 				</q-item>
 				<q-separator/>
 				<q-card-actions>
-					<a href="https://git-scm.com/"                     target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/git.png" /> </q-avatar> Git      </q-chip> </a>
-					<a href="https://getcomposer.org/"                 target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/composer.png" /> </q-avatar> Composer </q-chip> </a>
-					<a href="https://www.npmjs.com/"                   target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/Npm.svg" /> </q-avatar> Npm      </q-chip> </a>
-					<a href="https://yarnpkg.com/"                     target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/yarn.png" /> </q-avatar> Yarn     </q-chip> </a>
-					<a href="https://pypi.org/project/pip/"            target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/pip.png" /> </q-avatar> Pip      </q-chip> </a>
-					<a href="https://wiki.archlinux.org/title/pacman"  target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/descriptions/arch.png" /> </q-avatar> Pacman   </q-chip> </a>
+					<a href="https://git-scm.com/"                     target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/git.png"        /> </q-avatar> Git      </q-chip> </a>
+					<a href="https://getcomposer.org/"                 target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/composer.png"   /> </q-avatar> Composer </q-chip> </a>
+					<a href="https://www.npmjs.com/"                   target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/Npm.svg"        /> </q-avatar> Npm      </q-chip> </a>
+					<a href="https://yarnpkg.com/"                     target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/yarn.png"       /> </q-avatar> Yarn     </q-chip> </a>
+					<a href="https://pypi.org/project/pip/"            target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/pip.png"        /> </q-avatar> Pip      </q-chip> </a>
+					<a href="https://wiki.archlinux.org/title/pacman"  target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/descriptions/arch.png"   /> </q-avatar> Pacman   </q-chip> </a>
 					<a href="https://fedoraproject.org/wiki/Dnf"       target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/descriptions/centos.png" /> </q-avatar> Dnf      </q-chip> </a>
 					<a href="https://access.redhat.com/components/yum" target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/descriptions/fedora.png" /> </q-avatar> Yum      </q-chip> </a>
-					<a href="https://rubygems.org"                     target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/languages/ruby.png" /> </q-avatar> Gem      </q-chip> </a>
-					<a href="https://www.ffmpeg.org/"                  target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/FFmpeg.svg" /> </q-avatar> Ffmpeg   </q-chip> </a>
+					<a href="https://rubygems.org"                     target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/languages/ruby.png"      /> </q-avatar> Gem      </q-chip> </a>
+					<a href="https://www.ffmpeg.org/"                  target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/Packages/FFmpeg.svg"     /> </q-avatar> Ffmpeg   </q-chip> </a>
 				</q-card-actions>
 			</q-card>
 			<q-card class="my-card q-mb-md">
@@ -227,10 +227,27 @@
 
 <script>
 
-import { defineComponent } from 'vue' ;
+import { defineComponent } from 'vue'    ;
+import { createMetaMixin } from 'quasar' ;
 
 export default defineComponent({
 	name       : 'PageIndex',
+	mixins: [
+		createMetaMixin({
+			// sets document title
+			title: 'Mahmoud Sami',
+			// optional; sets final title as "Index Page - My Website", useful for multiple level meta
+			titleTemplate: title => `${title} - Resume`,
+			// meta tags
+			meta: {
+				keywords    : { name         : 'keywords'     , content: 'arch fedora centos docker jenkins php python ruby go javascript dart kotlin laravel gin django rails adonis mysql sqlite neo4j firebase mongodb postgressql git composer npm yarn pip pacman dnf yum gem ffmpeg' },
+				equiv       : { 'http-equiv' : 'Content-Type' , content: 'text/html; charset=UTF-8'                                      },
+				ogImage     : { property     : 'og:image'     , content: `http://graph.facebook.com/3366546543464315/picture?type=large` },
+				description : { name         : 'description'  , content: 'Mahmoud Sami Resume'                                           },
+				ogTitle     : { property     : 'og:title'     , content: `Mahmoud Sami Resume`                                           }
+			},
+		})
+	],
 	methods    : {
 		myTweak (offset) {
 			this.minHeight = offset ? `calc(100vh - ${offset}px)` : '100vh' ;
