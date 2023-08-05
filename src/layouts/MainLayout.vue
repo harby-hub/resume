@@ -30,7 +30,7 @@
                 <div class="w-100 row justify-center">
                     <q-avatar class = "avatar-img" >
                         <q-img class="absolute-top" />
-                        <q-img src="http://graph.facebook.com/3366546543464315/picture?type=large" />
+                        <q-img src="~assets/icon.png" />
                     </q-avatar>
                 </div>
                 <q-list padding>
@@ -43,6 +43,12 @@
                         <q-item clickable v-ripple @click="copy( '01145803442' , 'fas fa-phone' , lang.phoneNumber )">
                             <q-item-section avatar> <q-icon name="fas fa-phone" /> </q-item-section>
                             <q-item-section> <b>+201145803442</b> </q-item-section>
+                            <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
+                            <q-tooltip v-text="lang.clickCopy" />
+                        </q-item>
+                        <q-item clickable v-ripple @click="copy( '01060636646' , 'fas fa-phone' , lang.phoneNumber )">
+                            <q-item-section avatar> <q-icon name="fas fa-phone" /> </q-item-section>
+                            <q-item-section> <b>+201060636646</b> </q-item-section>
                             <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
                             <q-tooltip v-text="lang.clickCopy" />
                         </q-item>
@@ -59,15 +65,15 @@
                         icon="fas fa-users"
                         expand-icon="fas fa-angle-down"
                     >
-                        <q-item clickable v-ripple @click="copy( 'linkedin.com/in/harbii' , 'fab fa-linkedin' , lang.linkedinLink )">
+                        <q-item clickable v-ripple @click="copy( 'https://www.linkedin.com/in/mahmoud-harby/' , 'fab fa-linkedin' , lang.linkedinLink )">
                             <q-item-section avatar> <q-icon name="fab fa-linkedin" /> </q-item-section>
-                            <q-item-section> <b>linkedin.com/in/harbii  </b> </q-item-section>
+                            <q-item-section> <b>linkedin mahmoud harby </b> </q-item-section>
                             <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
                             <q-tooltip v-text="lang.clickCopy" />
                         </q-item>
-                        <q-item clickable v-ripple @click="copy( 'github.com/harbii' , 'fab fa-github-square' , lang.githubLink )">
+                        <q-item clickable v-ripple @click="copy( 'https://github.com/harby-hub' , 'fab fa-github-square' , lang.githubLink )">
                             <q-item-section avatar> <q-icon name="fab fa-github-square" /> </q-item-section>
-                            <q-item-section> <b>github.com/harbii </b> </q-item-section>
+                            <q-item-section> <b>github harby hub</b> </q-item-section>
                             <q-item-section avatar> <q-icon color="primary" name="far fa-clipboard" /> </q-item-section>
                             <q-tooltip v-text="lang.clickCopy" />
                         </q-item>
