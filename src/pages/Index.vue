@@ -4,15 +4,56 @@
 			<q-timeline-entry heading :body="lang.experience" />
 
 			<q-timeline-entry
-				icon      = "fas fa-circle"
-				:body     = "lang.analyzeProjects"
-				:subtitle = "'1/7/2018 – ' + lang.curren"
-				:title    = "lang.fullStackWebDeveloper + '/ black squares solutions'"
+        title     = "laranj app"
+				:body     = "lang.backEndWebDeveloper"
+				:subtitle = "'15/5/2023 – ' + lang.curren"
 			/>
 
 			<q-timeline-entry
-				:title   = "lang.FreelaWebDeveloperFreelancerncer"
+        title    = "quadratec soft"
+				:body    = "lang.backEndWebDeveloper"
+				subtitle = "9/1/2022 – 15/5/2023"
+			/>
+
+			<q-timeline-entry
+        title    = "Vision Dimension"
+				:body    = "lang.backEndWebDeveloper"
+				subtitle = "1/8/2021 – 9/1/2022"
+			/>
+
+			<q-timeline-entry
+        title    = "black squares solutions"
+				:body    = "lang.fullStackWebDeveloper"
+				subtitle = "1/7/2018 – 1/8/2021"
+			/>
+
+			<q-timeline-entry
+        title     = "Freelancer"
+        :body   = "lang.fullStackWebDeveloper"
 				subtitle = "12/3/2016 – 1/7/2018"
+			/>
+
+			<q-timeline-entry heading :body="lang.openSourceProjects" />
+
+			<q-timeline-entry
+				color    = "orange"
+				title    = "laravel Modules Graphql with base Auth"
+				body     = "composer create-project harby/laramodulesgraphqlauth laramodulesgraphqlauth"
+				subtitle = "[ php , laravel , Modules , Graphql ]"
+			/>
+
+			<q-timeline-entry
+				color    = "orange"
+				title    = "laravel Modules Graphql"
+				body     = "composer create-project harby/laramodulesgraphql laramodulesgraphql"
+				subtitle = "[ php , laravel , Modules , Graphql ]"
+			/>
+
+			<q-timeline-entry
+				color    = "orange"
+				title    = "laravel Modules"
+				body     = "composer create-project harby/laramodules laramodules"
+				subtitle = "[ php , laravel , Modules ]"
 			/>
 
 			<q-timeline-entry heading :body="lang.PROJECTS" />
@@ -127,8 +168,8 @@
 				</q-item>
 				<q-separator/>
 				<q-card-actions>
-					<a href="https://laravel.com/"                        target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/frameworks/Laravel.svg"  /> </q-avatar> Php    on Laravel </q-chip> </a>
-					<a href="https://adonisjs.com/"                       target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/frameworks/adonisjs.png" /> </q-avatar> Nodejs On Adonis  </q-chip> </a>
+					<a href="https://laravel.com/"                        target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/frameworks/Laravel.svg"  /> </q-avatar> Php    with Laravel </q-chip> </a>
+					<a href="https://adonisjs.com/"                       target="_blank" > <q-chip dense size="xl"> <q-avatar> <q-img src="~assets/frameworks/adonisjs.png" /> </q-avatar> Nodejs with Adonis  </q-chip> </a>
 				</q-card-actions>
 			</q-card>
 			<q-card class="my-card q-mb-md">
